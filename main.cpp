@@ -48,8 +48,7 @@ std::string rand_word(int size) {
 double fitness(std::string s, std::string goal) {
     double c=0;
     for(int i=0; i<s.length(); i++) {
-        char d = s[i]-goal[i];
-        c += 1. / (d*d+1);
+        c += s[i] == goal[i] ? 1 : 0;
     }
     return c / s.length();
 }
